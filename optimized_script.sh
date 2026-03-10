@@ -38,7 +38,7 @@ while IFS=, read -r sample vcf_path ped_path proband_id hpos; do
         ID_NUM=$(printf "%s\n" "${ID_LIST}" | sed '/^$/d' | wc -l)
         if [ "${ID_NUM}" -eq 1 ]; then
             echo "[INFO] VCF contains a single sample, proceeding in proband-only mode."
-            SAMPLE_LIST="${ID_LIST}"
+            SAMPLE_ID="${ID_LIST}"
         else
             # multiple samples
             if [ -z "${proband_id}" ]; then
